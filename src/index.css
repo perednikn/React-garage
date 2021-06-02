@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Componentes Ficha Producto */
+.fotoProducto{
+  color:blueviolet;
+}
+
+.nombreProducto{
+  color:chartreuse;
+}
+
+.detalleProducto{
+  color:springgreen;
+
+}
+
+.fichaProducto{
+  border: 1px solid #000000;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  max-width: 250px;
+  padding-left: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
