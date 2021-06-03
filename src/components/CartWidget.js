@@ -1,5 +1,3 @@
-import Milogo from '../Img/milogo.jpg';
-
 function IconCart(){
-return <img src={Milogo} />}
+return <i class="bi-cart4 iconCart" role="img"/>}
 export default IconCart;

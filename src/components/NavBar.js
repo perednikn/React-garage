@@ -4,7 +4,7 @@ import IconCart from './CartWidget.js'
 function NavBar () {
   return <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><IconCart /></a>
+    <a class="navbar-brand" href="#">Venta de Garage</a>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -37,6 +37,7 @@ function NavBar () {
         <input class="form-control me-2" type="search" placeholder="Cuánto queres gastar?" aria-label="Search" />
         <button class="btn btn-outline-success" type="submit">Randomize</button>
       </form>
+      <IconCart />
     </div>
   </div>
 </nav>
