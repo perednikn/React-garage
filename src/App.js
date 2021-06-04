@@ -10,6 +10,8 @@ import Milogo from './Img/milogo.jpg';
 
 function App() {
   
+
+
   return <>
   <div className="NavBar">
   <NavBar />

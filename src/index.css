@@ -41,6 +41,9 @@ code {
   margin-left: 10px;
   margin-bottom: 3px;
   font-size: 2rem;
-  
+  }
 
+.ItemsEnCarrito{
+  display: flex;
+  justify-content: space-between;
 }
