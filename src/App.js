@@ -17,7 +17,7 @@ function App() {
   <NavBar />
   </div>
   <h2>Esta es una venta de garage </h2>
-  
+  <div className="container" id="divArticulos"></div>
   <ItemList />
   
   
