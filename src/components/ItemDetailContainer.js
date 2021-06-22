@@ -1,18 +1,16 @@
 import React, { useEffect, useState}from 'react';
 import { useParams } from "react-router";
 import ItemDetail from './ItemDetail';
-//import ItemList from './ItemList';
+
 
 function ItemDetailContainer(){
     let { id } = useParams();
     let articuloId = id;
-    console.log(id)
+
     const [detalloItem, setDetalloItem] = useState([]);
 
     useEffect(() => {
-
-
-        
+     
 
     const listPrueba = [
         {id: 1, title: "Parlante", price: 500, pictureUrl: "parlante.png", detalle: "JBL GO", stock: 20},
@@ -25,11 +23,11 @@ function ItemDetailContainer(){
     
 
     for (let i = 0; i < listPrueba.length; i++){
-        if (listPrueba[i].id == articuloId){
+        if (listPrueba[i].id === articuloId){
             listParameter = listPrueba[i];
         }
     }
-    console.table(listParameter);
+
 
     const getItemDetallados = (productos) => {
         return new Promise((resolve, reject) => {

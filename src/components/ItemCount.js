@@ -14,7 +14,6 @@ const [cantidad, setCantidad] = useState(stockInicial);
 
 
 
-    /* useState(initial); */
 
     return (<div><div className="ItemsEnCarrito"> 
     <button className="btnRestaCarrito"

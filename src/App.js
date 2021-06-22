@@ -1,14 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-//import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar.js';
-//import ItemList from './components/ItemListContainer.js'
-//import IconCart from './components/CartWidget.js'
-//import Milogo from './Img/milogo.jpg';
 import ItemListContainer from './components/ItemListContainer.js';
 import ItemDetailContainer from './components/ItemDetailContainer.js';
-//import { BrowserRouter } from 'react-router-dom';
+
 
 
 
@@ -34,7 +30,15 @@ function App() {
       <Route path="/item/:id">
         <ItemDetailContainer />
       </Route>
-
+      <Route exact path="contacto">
+        <h2>ACA VAN MIS DATOS</h2>
+      </Route>
+      <Route path="/category/electronico">
+      <h2> ARTICULOS FILTRADOS POR SER ANALOGICOS</h2>
+      </Route>
+      <Route path="/category/analogico">
+        <h2> ARTICULOS FILTRADOS POR SER ANALOGICOS</h2>
+      </Route>
     </Switch>
     
     

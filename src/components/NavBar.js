@@ -12,30 +12,13 @@ function NavBar () {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-     <NavLink activeClassName="selected" to={'/item/:id'}>ITEM DETAIL</NavLink>
-     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link disableds" aria-current="page" href="#">Inicio</a>
-        </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Productos
-          </a>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a className="dropdown-item" href="#">Electrónicos</a></li>
-            <li><a className="dropdown-item" href="#">Deco</a></li>
-            <li><hr className="dropdown-divider" /></li>
-            <li><a className="dropdown-item" href="#">Ofertas</a></li>
-            <li><a className="dropdown-item" href="#">Gemas</a></li>
-          </ul>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Dónde estamos</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#" tabindex="-1" aria-disabled="true">Estacioná</a>
-        </li>
-      </ul>
+    <ul>
+    <NavLink activeClassName="selected" className="navItem" to={'/item/:id'}>ITEM DETAIL</NavLink>
+     <NavLink activeClassName="selected"  className="navItem" to="{'/category/electronico'}">ELECTRONICOS</NavLink>
+     <NavLink activeClassName="selected"  className="navItem"to="{'/category/analogico'}">ANALOGICOS</NavLink>
+     <NavLink activeClassName="selected"  className="navItem" to="{'/contacto'}">CONTACTO</NavLink>
+     </ul>
+    
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Cuánto queres gastar?" aria-label="Search" />
         <button className="btn btn-outline-success" type="submit">Randomize</button>

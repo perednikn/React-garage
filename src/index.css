@@ -105,3 +105,13 @@ code {
 .topNav a.selected{
   background-color: salmon;
 }
+
+#navItemDetail{
+
+}
+
+.navItem{
+  margin-left: 2px;
+  margin-right: 20px;
+  justify-content: center;
+}
