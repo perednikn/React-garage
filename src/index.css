@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Poppins', sans-serif;
+  background: url(./Img/fondo.jpg) ;
 }
 
 code {
@@ -31,10 +33,15 @@ code {
   border: 1px solid #000000;
   -moz-border-radius: 7px;
   border-radius: 7px;
-  max-width: 250px;
-  padding-left: 50px;
+  width: 200px;
+  padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: rgb(94, 37, 37, 0.8);
+  margin-left: 5px;
+  margin-bottom: 12px;
 }
 
 .iconCart{
@@ -46,6 +53,9 @@ code {
 .ItemsEnCarrito{
   display: flex;
   justify-content: space-between;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 4px;
 }
 
 #divArticulos{
@@ -67,4 +77,31 @@ code {
   margin-left: auto;
   margin-right: auto;
 }
+.divMapeado{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  justify-content: space-between;
 
+}
+
+.alCarritoProducto{
+  background-color: white;
+  margin-right: 12px;
+  margin-left: 8px;
+  
+}
+
+.bannerHome{
+  text-align: center;
+  font-size: 120px;
+  margin-top: 70px;
+  color: white;
+}
+
+.topNav a.selected{
+  background-color: salmon;
+}

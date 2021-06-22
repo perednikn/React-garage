@@ -11,9 +11,9 @@ const ItemList = () => {
 
       
     const listaArt = [
-        {id: 1, title: "Mate", price: 500, pictureUrl: "milogo.jpg", detalle: "asdasd", stock: 20},
-        {id: 2, title: "Termo", price: 1500, pictureUrl: "milogo.jpg", detalle: "asdasd", stock: 30},
-        {id: 3, title: "PS3", price: 3500, pictureUrl: "milogo.jpg", detalle: "asdasd", stock: 10},
+        {id: 1, title: "Parlante", price: 500, pictureUrl: "parlante.png", detalle: "JBL GO", stock: 20},
+        {id: 2, title: "Encendedor", price: 1500, pictureUrl: "encendedor.png", detalle: "Clipper", stock: 30},
+        {id: 3, title: "Cuenco", price: 3500, pictureUrl: "cuenco.png", detalle: "Ceramica", stock: 10},
         {id: 4, title: "Cartas", price: 50, pictureUrl: "milogo.jpg", detalle: "asdasd", stock: 7}
     ];
    
@@ -34,9 +34,9 @@ const ItemList = () => {
 }, []);
 
 return(
-    <div>
+    <div className="divMapeado">
         {usoItem.map((usoItem) => (
-            <Item id={usoItem.id} title={usoItem.title} price={usoItem.price} pictureUrl={usoItem.pictureUrl} detalle={usoItem.detalle} stock={usoItem.stock}/>
+            <Item id={usoItem.id} title={usoItem.title} price={usoItem.price} pictureUrl={usoItem.pictureUrl} stock={usoItem.stock}/>
         ))}
     </div>
 )
