@@ -1,11 +1,11 @@
 import ItemCount from './ItemCount';
+import React from 'react'
 //import Image from '../../public/images';
 
 
 
 function ItemDetail({id, title, price, pictureUrl, detalle, stock}){
 
-    
     let picturePath = "/images/" + pictureUrl
     return(
     <div className="itemDetalle" key={id}>
@@ -15,8 +15,7 @@ function ItemDetail({id, title, price, pictureUrl, detalle, stock}){
                         <p className=""> Detalle: {detalle}</p> <br/>
                         
                         <img src={picturePath} alt={"imagen Producto"}/>
-                        
-                        <p className="agregarDetalle"><ItemCount stock={stock}/></p>
+                        <ItemCount stock={stock}/>
     </div>
     )
     }

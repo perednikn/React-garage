@@ -39,6 +39,9 @@ function App() {
       <Route path="/category/analogico">
         <h2> ARTICULOS FILTRADOS POR SER ANALOGICOS</h2>
       </Route>
+      <Route path="/cart">
+        <h2> CARRITO</h2>
+      </Route>
     </Switch>
     
     
