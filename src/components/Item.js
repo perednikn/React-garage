@@ -8,7 +8,7 @@ function Item({id, title, price, pictureUrl, stock}){
     let imgPath = "/images/" + pictureUrl;
   
 return(
-<div className="fichaProducto" key={id}>
+<div className="fichaProducto" id={id}>
                     <img src={imgPath} alt={"Imagen Producto"} />
                     <p className="nombreProducto"> Nombre: {title}</p>
                     <p className="detalleProducto"> Precio: {price}</p>

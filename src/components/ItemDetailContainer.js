@@ -5,9 +5,9 @@ import ItemDetail from './ItemDetail';
 
 
 function ItemDetailContainer(){
-    let { id } = useParams();
-    
-
+    const { id } = useParams();
+   let parametroID = parseInt(id);
+debugger
     const [detalloItem, setDetalloItem] = useState([]);
 
     useEffect(() => {
@@ -18,37 +18,41 @@ function ItemDetailContainer(){
             {id: 4, title: "Cartas", price: 50, pictureUrl: "milogo.jpg", detalle: "asdasd", stock: 7}
     ];
 
-        const listParameter = listPrueba.filter(element => element.id === Number(id))
-
-        console.table(listParameter)
-
-
 
         const getItemDetallados = (productos) => {
 
             return new Promise((resolve, reject) => {
 
                 //Espera 2 segundos para simular demora
-
                 setTimeout(() => {
-
-                    resolve(productos);
-
+                   resolve(productos);
                 }, 2000);
 
             });
-
         }
-
-
-
-        getItemDetallados(listParameter)
+    
+  
+  
+  
+    if (parametroID !== "") {
+        if (!isNaN(parametroID)){
+      var listaArt = listPrueba.filter(item => item.id === parametroID)
+      getItemDetallados(listaArt)
 
             .then(result => setDetalloItem(...result))
-
             .catch(error => console.log("oops"))
+     }else{ 
+        getItemDetallados(listPrueba)
 
-    }, [id]);
+        .then(result => setDetalloItem(...result))
+        .catch(error => console.log("oops"))
+     } 
+    }
+       
+
+    
+
+    });
 
 return(
     

@@ -14,9 +14,9 @@ function NavBar () {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul>
     <NavLink activeClassName="selected" className="navItem" to={'/item/:id'}>ITEM DETAIL</NavLink>
-     <NavLink activeClassName="selected"  className="navItem" to="{'/category/electronico'}">ELECTRONICOS</NavLink>
-     <NavLink activeClassName="selected"  className="navItem"to="{'/category/analogico'}">ANALOGICOS</NavLink>
-     <NavLink activeClassName="selected"  className="navItem" to="{'/contacto'}">CONTACTO</NavLink>
+    <NavLink activeClassName="selected" className="navItem" to={'/category/electronico'}>ELECTRONICOS</NavLink>
+    <NavLink activeClassName="selected" className="navItem" to={'/category/analogico'}>ANALOGICOS</NavLink>
+    <NavLink activeClassName="selected" className="navItem" to={'/contacto'}>CONTACTO</NavLink>
      </ul>
     
       <form className="d-flex">
