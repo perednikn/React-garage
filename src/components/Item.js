@@ -12,7 +12,7 @@ return(
                     <img src={imgPath} alt={"Imagen Producto"} />
                     <p className="nombreProducto"> Nombre: {title}</p>
                     <p className="detalleProducto"> Precio: {price}</p>
-                    <ItemCount stock={stock}/>
+                    {/* <ItemCount stock={stock}/> */}
                     <Link className="verDetalle" to={routerPath}> DETALLE</Link>
 </div>
 )

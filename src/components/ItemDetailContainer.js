@@ -1,13 +1,13 @@
 import React, { useEffect, useState}from 'react';
 import { useParams } from "react-router";
 import ItemDetail from './ItemDetail';
+//import ThemeContext from '../context/CartContext.js';
 
 
 
 function ItemDetailContainer(){
     const { id } = useParams();
    let parametroID = parseInt(id);
-debugger
     const [detalloItem, setDetalloItem] = useState([]);
 
     useEffect(() => {
@@ -33,9 +33,8 @@ debugger
     
   
   
-  
     if (parametroID !== "") {
-        if (!isNaN(parametroID)){
+        if (!isNaN(parametroID)){ 
       var listaArt = listPrueba.filter(item => item.id === parametroID)
       getItemDetallados(listaArt)
 
@@ -47,7 +46,7 @@ debugger
         .then(result => setDetalloItem(...result))
         .catch(error => console.log("oops"))
      } 
-    }
+    } 
        
 
     

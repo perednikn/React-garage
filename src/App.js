@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar.js';
 import ItemListContainer from './components/ItemListContainer.js';
 import ItemDetailContainer from './components/ItemDetailContainer.js';
+import CartProvider from './provider/CartProvider';
 
 
 
@@ -19,15 +20,21 @@ function App() {
 
     <Switch>
       <Route exact path="/">
-          <ItemListContainer />
+        <CartProvider>
+            <ItemListContainer />
+        </CartProvider>
       </Route>
     
       <Route exact path="/category/:id">
-        <ItemListContainer />
+        <CartProvider>
+          <ItemListContainer />
+        </CartProvider>
       </Route>
     
       <Route path="/item/:id">
+       <CartProvider>
         <ItemDetailContainer />
+        </CartProvider>
       </Route>
     
       <Route exact path="/contacto">
@@ -43,7 +50,9 @@ function App() {
       </Route>
     
       <Route path="/cart">
-        <h2> CARRITO</h2>
+       <CartProvider>
+          <h2> CARRITO</h2>
+        </CartProvider>
       </Route>
     </Switch>
     
