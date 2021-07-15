@@ -21,7 +21,7 @@ const ItemList = () => {
    
     if (id !== "" && id !== undefined) {
         listaArt = listaArt.filter(item => item.categoria === id)
-        debugger;
+        
     }
     
     const getProductos = (productos) => {

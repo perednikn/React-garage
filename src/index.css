@@ -122,3 +122,25 @@ code {
 .restaStock{
   justify-self: left;
 }
+
+.tablaCart{
+  background-color: rgb(231, 231, 231);
+}
+.carritoVacio{
+  background-color: rgb(231, 231, 231);
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+}
+.cartContenido{
+  background-color: rgb(211, 101, 101);
+  padding: 20px 20px 20px 20px;
+  }
+
+.filaCart{
+  text-align: center;
+}
+
+.NavBarStyle{
+  justify-content: right;
+   
+}
