@@ -29,9 +29,9 @@ function ItemDetailContainer(){
     
         if (id !== "" && id !== undefined) {
                
-                const byCategory = itemCollection.where('id', '==', parametroID)
+                const byId = itemCollection.where('id', '==', parametroID)
     
-                byCategory.get().then(querySnapshot => {
+                byId.get().then(querySnapshot => {
                     if (querySnapshot.size === 0){
                         console.log("Sin info")
                         setLoading(false);
