@@ -8,24 +8,22 @@ import ThemeContext from '../context/CartContext';
 function ItemCount({ stock, initial}) {
     const { id } = useParams();
     const parseId = parseInt(id);
-   /*  const [clickeado, setClickeado] = useState(false); */
+   const [clickeado, setClickeado] = useState(false); 
     
-    const { addToCart, clickeado }  = useContext(ThemeContext);
+    const { addToCart }  = useContext(ThemeContext);
     
-    /* const onAdd = (cantidadCarrito) => {
+     const onAdd = (cantidadCarrito) => {
         setClickeado(true);
         console.log("TE MANDO " + cantidadCarrito + " DE ESAS PAL CHANGO")
+        addToCart(parseId, cantidad)
     }
-     */
+    
  
     let stockInicial = 1;
  
     const [cantidad, setCantidad] = useState(stockInicial);
    
      let stockActual = stock;
-
-
-
 
     return ( 
        
@@ -43,7 +41,7 @@ function ItemCount({ stock, initial}) {
             
             <p> Stock disponible: {stockActual}</p>
             
-            <button type="button" className="btn btn-success" onClick={ () => addToCart(parseId, cantidad)}>Agregar a Carrito</button>
+            <button type="button" className="btn btn-success" onClick={() => onAdd(cantidad)}>Agregar a Carrito</button>
         </div> 
 
     
