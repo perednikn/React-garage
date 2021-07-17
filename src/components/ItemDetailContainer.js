@@ -3,61 +3,53 @@ import { useParams } from "react-router";
 import ItemDetail from './ItemDetail';
 //import ThemeContext from '../context/CartContext.js';
 
+import { getFirestore } from '../firebase/firebase.js'
 
 
 function ItemDetailContainer(){
     const { id } = useParams();
    let parametroID = parseInt(id);
-    const [detalloItem, setDetalloItem] = useState([]);
+   
+    const [loading, setLoading] = useState(true);
+    const [items, setItems] = useState([])
+
 
     useEffect(() => {
-        const listPrueba = [
-            {id: 1, title: "Parlante", price: 500, pictureUrl: "parlante.png", detalle: "JBL GO", stock: 20},
-            {id: 2, title: "Encendedor", price: 1500, pictureUrl: "encendedor.png", detalle: "Clipper", stock: 30},
-            {id: 3, title: "Cuenco", price: 3500, pictureUrl: "cuenco.png", detalle: "Ceramica", stock: 10},
-            {id: 4, title: "Cartas", price: 50, pictureUrl: "milogo.jpg", detalle: "asdasd", stock: 7}
-    ];
-
-
-        const getItemDetallados = (productos) => {
-
-            return new Promise((resolve, reject) => {
-
-                //Espera 2 segundos para simular demora
-                setTimeout(() => {
-                   resolve(productos);
-                }, 2000);
-
-            });
-        }
+        const dataBase = getFirestore();
+        const itemCollection = dataBase.collection('items')
+        
+        itemCollection.get() .then(querySnapshot => {
+            if (querySnapshot.size === 0){
+                console.log("Sin info");
+                setLoading(false);
+            }
+            setItems(querySnapshot.docs.map(doc => doc.data()));
+            setLoading(false);
+        })
     
-  
-  
-    if (parametroID !== "") {
-        if (!isNaN(parametroID)){ 
-      var listaArt = listPrueba.filter(item => item.id === parametroID)
-      getItemDetallados(listaArt)
-
-            .then(result => setDetalloItem(...result))
-            .catch(error => console.log("oops"))
-     }else{ 
-        getItemDetallados(listPrueba)
-
-        .then(result => setDetalloItem(...result))
-        .catch(error => console.log("oops"))
-     } 
-    } 
-       
-
+        if (id !== "" && id !== undefined) {
+               
+                const byCategory = itemCollection.where('id', '==', parametroID)
+    
+                byCategory.get().then(querySnapshot => {
+                    if (querySnapshot.size === 0){
+                        console.log("Sin info")
+                        setLoading(false);
+                    }
+                    setItems(querySnapshot.docs.map(doc=>doc.data()))
+                    setLoading(false);
+                })
+                
+            } 
     
 
-    });
+    }, [id]);
 
 return(
     
     <div>
     
-        <ItemDetail id={detalloItem.id} title={detalloItem.title} price={detalloItem.price} pictureUrl={detalloItem.pictureUrl} detalle={detalloItem.detalle} stock={detalloItem.stock}/>
+        <ItemDetail id={items.id} title={items.title} price={items.price} pictureUrl={items.pictureUrl} detalle={items.detalle} stock={items.stock}/>
    
 </div>
 
