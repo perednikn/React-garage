@@ -1,9 +1,10 @@
 import React, { useEffect, useState}from 'react';
 import { useParams } from "react-router";
 import ItemDetail from './ItemDetail';
+
 //import ThemeContext from '../context/CartContext.js';
 
-import { getFirestore } from '../firebase/firebase.js'
+import { getFirestore } from '../firebase/firebase';
 
 
 function ItemDetailContainer(){
@@ -28,6 +29,7 @@ function ItemDetailContainer(){
         })
     
         if (id !== "" && id !== undefined) {
+ 
                
                 const byId = itemCollection.where('id', '==', parametroID)
     
@@ -39,7 +41,9 @@ function ItemDetailContainer(){
                     setItems(querySnapshot.docs.map(doc=>doc.data()))
                     setLoading(false);
                 })
-                
+ 
+
+                debugger;
             } 
     
 
@@ -47,11 +51,13 @@ function ItemDetailContainer(){
 
 return(
     
-    <div>
+<div className="divMapeado">
+        {items.map((items) => (
+            <ItemDetail id={items.id} title={items.title} price={items.price} pictureUrl={items.pictureUrl} detalle={items.detalle} stock={items.stock}/>
+        ))}
+    </div>
+
     
-        <ItemDetail id={items.id} title={items.title} price={items.price} pictureUrl={items.pictureUrl} detalle={items.detalle} stock={items.stock}/>
-   
-</div>
 
     )
 

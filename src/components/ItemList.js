@@ -24,6 +24,7 @@ const ItemList = () => {
         setItems(querySnapshot.docs.map(doc => doc.data()));
         setLoading(false);
     })
+    debugger;
 
     if (id !== "" && id !== undefined) {
            
