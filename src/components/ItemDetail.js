@@ -1,21 +1,22 @@
 import ItemCount from './ItemCount';
 import React from 'react'
-//import Image from '../../public/images';
-
-
 
 function ItemDetail({id, title, price, pictureUrl, detalle, stock}){
 
     let picturePath = "/images/" + pictureUrl
     return(
     <div className="itemDetalle" key={id}>
-                        <p className=""> Nombre: {title}</p> <br/>
-                        {/* <p className=""> ELEGISTE EL PRODUCTO: {productoID}</p> */}
-                        <p className=""> Precio: {price}</p> <br/>
-                        <p className=""> Detalle: {detalle}</p> <br/>
-                        
-                        <img src={picturePath} alt={"imagen Producto"}/>
-                        <ItemCount stock={stock}/>
+        <div className="infoProducto">
+            <span className="tituloDetalle"> Vas a comprar: <br/><p id="titDetalle">{title}</p></span> <br/>
+            <span className="precioDetalle"> A tan solo: <p id="precDetalle">${price}.-</p></span> <br/>
+            <p className="detalleDetalle"> Lo que tenés que saber: <br/> {detalle}</p> <br/>
+        </div>
+        <div className="imagenProducto">
+            <img src={picturePath} alt={"imagen Producto"}/>
+        </div>
+        <div className="botonAgregar">
+            <ItemCount stock={stock}/>
+        </div>
     </div>
     )
     }

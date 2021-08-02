@@ -8,7 +8,5 @@ function ItemListContainer(){
     <ItemList/>
   )
 
-
-
 }
 export default ItemListContainer;

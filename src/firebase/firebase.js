@@ -1,5 +1,7 @@
 import firebase from 'firebase/app';
+
 import 'firebase/firestore';
+
 
 var app = firebase.initializeApp({
     apiKey: "AIzaSyCcpVtuId5DTZoP5M7mxW7kw0SEontBVtw",
@@ -11,10 +13,10 @@ var app = firebase.initializeApp({
     measurementId: "G-MCC2V7JEBY"
   });
 
-export function getFirebase(){
+  export function getFirebase() {
     return app;
-}
-
-export function getFirestore(){
-    return firebase.firestore(app)
-}
+  }
+  export function getFirestore() {
+    return firebase.firestore(app);
+  }
+  

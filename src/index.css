@@ -66,17 +66,82 @@ code {
 /* ItemDetail - Estilo */
 
 .itemDetalle{
-  background-color: rgb(240, 14, 14);
-  border:rgb(77, 73, 73) 12px inset;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  justify-content: center;
-  width: 700px;  
-  margin-left: auto;
-  margin-right: auto;
+  display: grid;
+
+  grid-template-areas: "infoProducto imagenProducto"
+                        "itemCount itemCount2";
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 300px 1fr;
+    border: 1px solid #000000;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    width: 600px;
+    height: 450px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: rgb(94, 37, 37, 0.8);
+    margin-left: 5px;
+    margin-bottom: 12px;
+  
 }
+.infoProducto{
+ grid-area: "infoProducto";
+
+}
+.imagenProducto{
+  grid-area: "imagenProducto";
+  padding-top: 75px;
+}
+.ItemsEnCarrito{
+  grid-area: "itemCount";
+  margin-top: 20px;
+  padding-top: 10px;
+ background-color: rgb(145, 160, 160);
+ }
+
+.botonAgregar{
+  
+  grid-area: "itemCount2";
+}
+.tituloDetalle{
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 20px;
+  color:rgb(18, 199, 87);
+ 
+}
+#titDetalle{
+  font-size: 30px;
+  -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+}
+.precioDetalle{
+ 
+  font-size: 20px;
+  color: rgb(216, 43, 43);
+ 
+}
+#precDetalle{
+ font-size: 30px;
+  -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+}
+.detalleDetalle{
+  font-size: 20px;
+  margin-top: -24px;
+}
+.btnProductoAgregado{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+  }
+
+.btnCompraMas{
+
+  margin-left: 15px;
+}
+
 .divMapeado{
   display: flex;
   flex-wrap: wrap;
@@ -85,11 +150,10 @@ code {
   margin-right: auto;
   margin-top: 30px;
   justify-content: space-between;
-
 }
 
 .alCarritoProducto{
-  background-color: white;
+  background-color: rgb(17, 1, 1);
   margin-right: 12px;
   margin-left: 8px;
   
@@ -99,11 +163,15 @@ code {
   text-align: center;
   font-size: 120px;
   margin-top: 70px;
-  color: white;
+  color: rgb(62, 49, 240);
 }
 
+
 .topNav a.selected{
-  background-color: salmon;
+  padding: 4px 4px 4px 4px;
+  border: 2px solid #000000;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
 }
 
 
@@ -114,7 +182,7 @@ code {
   justify-content: center;
 }
 .cantCarrito{
-  color: white;
+  color: rgb(206, 35, 35);
   font-size: 25px;
   display: inline-flex;
   justify-content: space-between;
@@ -127,12 +195,24 @@ code {
   background-color: rgb(231, 231, 231);
 }
 .carritoVacio{
-  background-color: rgb(231, 231, 231);
+  background-color: rgb(94, 37, 37, 0.8);
   text-align: center;
   padding: 20px 20px 20px 20px;
 }
 .cartContenido{
-  background-color: rgb(211, 101, 101);
+ 
+  border: 1px solid #000000;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: rgb(94, 37, 37, 0.8);
+  margin-left: 220px;
+  margin-bottom: 12px;
   padding: 20px 20px 20px 20px;
   }
 
@@ -142,5 +222,11 @@ code {
 
 .NavBarStyle{
   justify-content: right;
+   padding-left: 10px;
    
+}
+
+.opcionesNav{
+  display: flex;
+  justify-content: center;
 }
